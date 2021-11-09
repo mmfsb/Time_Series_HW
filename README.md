@@ -49,7 +49,7 @@ This is the plot of Settle Price VS Trend
 
 This is the plot of the Settle Noise
 
-![Plot with Settle Noise](Images/Settle_Nois.png) 
+![Plot with Settle Noise](Images/Settle_Noise.png)
 
 3. Forecasting Returns using an ARMA Model.
 
