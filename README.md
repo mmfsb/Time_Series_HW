@@ -102,105 +102,50 @@ So based on increasing prices with decreasing returns and increased risk of vola
 
 Because p-values are not lower than 0.05 for ARMA and ARIMA, I would not feel confident using these models for trading. I would consider the GARCH model for volatility.
 
+- - -
 
 ### Linear Regression Forecasting
 
 In this notebook, I built a Scikit-Learn linear regression model to predict Yen futures ("settle") returns with *lagged* Yen futures returns and categorical calendar seasonal effects (e.g., day-of-week or week-of-year seasonal effects).
 
 1. Data Preparation (Creating Returns and Lagged Returns and splitting the data into training and testing data)
-DP_returns_head_tail
-DP_lagged_returns_head_tail
+
+![Data Preparation Returns DF Head and Tail](Images/DP_returns_head_tail.png)
+
+![Data Preparation Lagged Returns DF Head and Tail](Images/DP_lagged_returns_head_tail.png)
+
+![Train_Test_Split](Images/Train_Test_Split.png)
+
 
 2. Fitting a Linear Regression Model.
-
+![Linear_Regression_Model](Images/Linear_Regression_Model.png)
 
 3. Making predictions using the testing data.
+I want to evaluate the model using data that it has never seen before, in this case: X_test.
 
+![First 20 Predictions VS the True Values](Images/First_20_Predictions_VS_the_True_Values.png)
+
+I also plotted the first 20 predictions against the true values in the same plot to see how it performed
+
+![First 20 Predictions VS the True Values Same Graph](Images/First_20_Predictions_VS_the_True_Values_same_graph.png)
 
 4. Out-of-sample performance.
+
+I evaluated the model using "out-of-sample" data (X_test and y_test). The Out-of-Sample Root Mean Squared Error (RMSE) is 0.41521675083603804.
+
+![Out of sample performance](Images/Out_of_sample_performance.png)
 
 
 5. In-sample performance.
 
-Use the results of the linear regression analysis and modeling to answer the following question:
+I evaluated the model using in-sample data (X_train and y_train). The In-sample Root Mean Squared Error (RMSE) is 0.5658708047560468
+
+![In sample performance](Images/In_sample_performance.png)
+
 
 * Does this model perform better or worse on out-of-sample data compared to in-sample data?
 
-- - -
 
-### Hints and Considerations
-
-* Out-of-sample data is data that the model hasn't seen before (Testing data).
-* In-sample data is data that the model was trained on (Training data).
-
-
-### Submission
-
-* Create Jupyter Notebooks for the analysis and host the notebooks on GitHub.
-
-* Include a Markdown that summarizes your models and findings and include this report in your GitHub repo.
-
-* Submit the link to your GitHub project to Bootcampspot.
 
 - - -
 
-### Requirements
-
-#### Time Series Forecasting  (20 points)
-
-##### To receive all points, your code must:
-
-* Utilize the Hodrick-Prescott Filter to decompose the settle price into trend and noise. (5 points)
-* Use the ARMA Model to forecast returns. (5 points)
-* Use the ARIMA Model to forecast returns. (5 points)
-* Use the GARCH Model to forecast returns. (5 points)
-#### Time Series Analysis  (15 points)
-
-##### To receive all points, your code must:
-
-* Analyze the yen to decide whether to make a purchase. (5 points)
-* Analyze the risk of the yen. (5 points)
-* Analyze the confidence of models as a basis for trading. (5 points)
-
-#### Linear Regression Forecasting  (30 points)
-
-##### To receive all points, your code must:
-
-* Prepare the data, create returns and lagged returns, then split the data into training and testing sets. (5 points)
-* fit a linear Regression model to the data. (5 points)
-* Make predictions using the testing data. (6 points)
-* Evaluate the out-of-sample performance. (7 points)
-* Evaluate the In-sample performance. (7 points)
-
-#### Linear Regression Analysis  (5 points)
-
-##### To receive all points, your code must:
-
-* Analyze the model performance for out-of-sample and in-sample data and write a conclusion. (5 points)
-
-#### Coding Conventions and Formatting (10 points)
-
-##### To receive all points, your code must:
-
-* Place imports at the beginning of the file, just after any module comments and docstrings and before module globals and constants. (3 points)
-* Name functions and variables with lowercase characters and with words separated by underscores. (2 points)
-* Follow Don't Repeat Yourself (DRY) principles by creating maintainable and reusable code. (3 points)
-* Use concise logic and creative engineering where possible. (2 points)
-
-#### Deployment and Submission (10 points)
-
-##### To receive all points, you must:
-
-* Submit a link to a GitHub repository that’s cloned to your local machine and contains your files. (5 points)
-* Include appropriate commit messages in your files. (5 points)
-
-#### Code Comments (10 points)
-
-##### To receive all points, your code must:
-
-* Be well commented with concise, relevant notes that other developers can understand. (10 points)
-
-
----
-
-© 2021 Trilogy Education Services
