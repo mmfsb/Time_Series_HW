@@ -39,62 +39,87 @@ In this notebook, I loaded historical Dollar-Yen exchange rate futures data and 
 It is difficult to determine if there are any long-term or short-term patterns.
 
 2. Decomposition using a Hodrick-Prescott Filter (Decompose the Settle price into trend and noise).
-This is the dataframe of the Settle Price with added columns for Noise and Trend
+Using a Hodrick-Prescott Filter, I decomposed the Settle price into a trend and noise.
 
 ![Dataframe with settle price noise and trend](Images/DataFrame_with_settle_price_noise_trend.png) 
 
-This is the plot of Settle Price VS Trend
+This is the plot of Settle Price VS Trend. There are spikes that go above and below the trend.
 
 ![Plot with settle price vs trend](Images/Settle_Price_VS_Trend.png) 
 
-This is the plot of the Settle Noise
+This is the plot of the Settle Noise.  
 
 ![Plot with Settle Noise](Images/Settle_Noise.png)
 
 3. Forecasting Returns using an ARMA Model.
 
-This is the ARMA Model Results
-![ARMA MODEL RESULTS](Images/ARMA_Model_results.png)
+This is the ARMA Model Results and the ARMA 5 day Yen Returns Plot
+
 The P>|z| column is the p-value of the coefficient. It is really important to check these p-values before you continue using the model. Notice that p-value is greater than 0.05. Thus the coefficient is unreliable and that can cause misleading results; the model is not a good fit
 
-This is the ARMA 5 day Yen Returns Plot
+The model forecasts in 5 days the Yen returns will decrease from 0.012 to 0.006.
+
+![ARMA MODEL RESULTS](Images/ARMA_Model_results.png)
+
 ![ARMA MODEL 5 DAY PLOT](Images/ARMA_5_day_plot.png)
-The model forecasts in 5 days the Yen returns will decrease from 0.012 to 0.006. 
+ 
 
 4. Forecasting the Settle Price using an ARIMA Model.
 
-This is the ARIMA Model Results
-![ARIMA MODEL RESULTS](Images/ARIMA_MODEL_RESULTS.png)
-Notice that p-value is greater than 0.05. Thus the coefficient is unreliable and that can cause misleading results; the model is not a good fit
+This is the ARIMA Model Results and the ARIMA 5 day Plot
 
-This is the ARIMA 5 day Yen Price Plot
+Notice that p-value is greater than 0.05. Thus the coefficient is unreliable and that can cause misleading results; the model is not a good fit.
+
+The model forecasts in 5 days the Yen will increase to 9228
+
+![ARIMA MODEL RESULTS](Images/ARIMA_MODEL_RESULTS.png)
+
 ![ARIMA MODEL 5 DAY PLOT](Images/ARIMA_5_DAY_PLOT.png)
-The model forecasts in 5 days the Yen Price will increase to 9228
+
 
 5. Forecasting Volatility with GARCH.
 
+This is the GARCH Model Results and the GARCH 5 Day Forcast of Volatility
 
-Use the results of the time series analysis and modeling to answer the following questions:
+The p-values are all less than 0.05. Notice that alpha[2] has a p-value of 1, but it not significant because its coefficient is 0. This model is a good fit.
 
-1. Based on your time series analysis, would you buy the yen now?
+The model forecasts in 5 days the volatility will increase.
 
-2. Is the risk of the yen expected to increase or decrease?
+![GARCH MODEL RESULTS](Images/GARCH_MODEL_RESULTS.png)
 
-The risk is expected to increase.
+![GARCH MODEL 5 DAY PLOT](Images/5_Day_Forecast_of_Volatility.png)
 
-3. Based on the model evaluation, would you feel confident in using these models for trading?
+
+#### Conclusion
+
+According to the ARMA model, the Japanese Yen returns will decrease. On the other hand, according to the ARIMA models, the Japanese Yen price will increase.
+
+Another factor to consider is unreliable coefficients which may cause misleading results because the p-values are all greater than 0.05. 
+
+Based on the GARCH forecast, the risk of volatility for the Yen will increase each day.
+
+So based on increasing prices with decreasing returns and increased risk of volatility, I would not buy the Yen
+
+Because p-values are not lower than 0.05 for ARMA and ARIMA, I would not feel confident using these models for trading. I would consider the GARCH model for volatility.
 
 
 ### Linear Regression Forecasting
 
-In this notebook, you will build a Scikit-Learn linear regression model to predict Yen futures ("settle") returns with *lagged* Yen futures returns and categorical calendar seasonal effects (e.g., day-of-week or week-of-year seasonal effects).
-
-Follow the steps outlined in the regression_analysis starter notebook to complete the following:
+In this notebook, I built a Scikit-Learn linear regression model to predict Yen futures ("settle") returns with *lagged* Yen futures returns and categorical calendar seasonal effects (e.g., day-of-week or week-of-year seasonal effects).
 
 1. Data Preparation (Creating Returns and Lagged Returns and splitting the data into training and testing data)
+DP_returns_head_tail
+DP_lagged_returns_head_tail
+
 2. Fitting a Linear Regression Model.
+
+
 3. Making predictions using the testing data.
+
+
 4. Out-of-sample performance.
+
+
 5. In-sample performance.
 
 Use the results of the linear regression analysis and modeling to answer the following question:
