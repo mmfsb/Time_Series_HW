@@ -53,18 +53,35 @@ This is the plot of the Settle Noise
 
 3. Forecasting Returns using an ARMA Model.
 
+This is the ARMA Model Results
+![ARMA MODEL RESULTS](Images/ARMA_Model_results.png)
+The P>|z| column is the p-value of the coefficient. It is really important to check these p-values before you continue using the model. Notice that p-value is greater than 0.05. Thus the coefficient is unreliable and that can cause misleading results; the model is not a good fit
 
+This is the ARMA 5 day Yen Returns Plot
+![ARMA MODEL 5 DAY PLOT](Images/ARMA_5_day_plot.png)
+The model forecasts in 5 days the Yen returns will decrease from 0.012 to 0.006. 
 
-3. Forecasting the Settle Price using an ARIMA Model.
+4. Forecasting the Settle Price using an ARIMA Model.
 
+This is the ARIMA Model Results
+![ARIMA MODEL RESULTS](Images/ARIMA_MODEL_RESULTS.png)
+Notice that p-value is greater than 0.05. Thus the coefficient is unreliable and that can cause misleading results; the model is not a good fit
 
+This is the ARIMA 5 day Yen Price Plot
+![ARIMA MODEL 5 DAY PLOT](Images/ARIMA_5_DAY_PLOT.png)
+The model forecasts in 5 days the Yen Price will increase to 9228
 
-4. Forecasting Volatility with GARCH.
+5. Forecasting Volatility with GARCH.
+
 
 Use the results of the time series analysis and modeling to answer the following questions:
 
 1. Based on your time series analysis, would you buy the yen now?
+
 2. Is the risk of the yen expected to increase or decrease?
+
+The risk is expected to increase.
+
 3. Based on the model evaluation, would you feel confident in using these models for trading?
 
 
