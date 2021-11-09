@@ -36,13 +36,22 @@ In this notebook, I loaded historical Dollar-Yen exchange rate futures data and 
 1. Return Forecasting: Initial Time-Series Plotting
 ![Initial Time-Series Plotting](Images/Initial_Time-Series_Plotting.png) 
 
-It is difficult to determine if there are any long ter
+It is difficult to determine if there are any long-term or short-term patterns.
 
-1. Decomposition using a Hodrick-Prescott Filter (Decompose the Settle price into trend and noise).
+2. Decomposition using a Hodrick-Prescott Filter (Decompose the Settle price into trend and noise).
+This is the dataframe of the Settle Price with added columns for Noise and Trend
 
+![Dataframe with settle price noise and trend](Images/DataFrame_with_settle_price_noise_trend.png) 
 
+This is the plot of Settle Price VS Trend
 
-2. Forecasting Returns using an ARMA Model.
+![Plot with settle price vs trend](Images/Settle_Price_VS_Trend.png) 
+
+This is the plot of the Settle Noise
+
+![Plot with Settle Noise](Images/Settle_Nois.png) 
+
+3. Forecasting Returns using an ARMA Model.
 
 
 
