@@ -145,6 +145,7 @@ I evaluated the model using in-sample data (X_train and y_train). The In-sample 
 
 * Does this model perform better or worse on out-of-sample data compared to in-sample data?
 
+The training (in sample) RMSE is 0.57 and the testing (out of sample) RMSE is 0.42. The model performs better on in sample data than out of sample data.
 
 
 - - -
