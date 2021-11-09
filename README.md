@@ -1,6 +1,6 @@
 # A Yen for the Future
 
-![Yen Photo](Images/use_this.png)
+![Yen Photo](Images/use_this1.png)
 
 ## Background
 
