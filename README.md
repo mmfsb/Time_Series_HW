@@ -17,10 +17,6 @@ I will use the following:
 
 ## Files
 
-Use the following starter code to complete this assignment. 
-
-Note: The starter code shows example calculations and figures to use as a guide. However, your actual output may differ depending on the code and data used.
-
 [Time-Series Starter Notebook](Notebooks_and_Data/time_series_analysis.ipynb)
 
 [Linear Regression Starter Notebook](Notebooks_and_Data/regression_analysis.ipynb)
